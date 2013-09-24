@@ -1,0 +1,11 @@
+
+Create show method for tiddlers.
+
+Implement background color for tables
+
+Functions to read and handle TiddlyWiki version.
+May give a warning if a new version is available.
+
+Function to Check for the 'sortable' and 'imagesize' plugins.
+
+Automatic download of the last TiddlyWiki version?
