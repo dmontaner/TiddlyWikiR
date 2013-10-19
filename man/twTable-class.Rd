@@ -2,6 +2,8 @@
 \name{twTable-class}
 \alias{align,twTable-method}
 \alias{align<-,twTable-method}
+\alias{bgcolor}
+\alias{bgcolor<-}
 \alias{color}
 \alias{color<-}
 \alias{colref}
@@ -51,6 +53,8 @@
   target or URL to be redirected to from each cell of the
   table.} \item{\code{color}:}{character matrix indicating
   the color of each cell of the table.}
+  \item{\code{bgcolor}:}{character matrix indicating the
+  background color of each cell of the table.}
   \item{\code{includeRowNames}:}{logical; if TRUE row names
   of "dat" are used as row names of the table.}
   \item{\code{includeColNames}:}{logical; if TRUE column

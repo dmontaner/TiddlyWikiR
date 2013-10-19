@@ -1,7 +1,8 @@
 
-Create show method for tiddlers.
+Define a "dim" method for twTable
+Define a methods for sub-setting twTable
 
-Implement background color for tables
+Create show method for tiddlers.
 
 Functions to read and handle TiddlyWiki version.
 May give a warning if a new version is available.

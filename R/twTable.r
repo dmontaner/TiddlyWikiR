@@ -12,6 +12,7 @@
 ##' @aliases dat dat<-
 ##' @aliases ref,twTable-method  ref<-,twTable-method
 ##' @aliases color color<-
+##' @aliases bgcolor bgcolor<-
 ##' @aliases includeRowNames includeRowNames<-
 ##' @aliases includeColNames includeColNames<-
 ##' @aliases rowref rowref<-
@@ -43,6 +44,7 @@
 ##'    \item{\code{dat}:}{a data.frame containing the table values.}
 ##'    \item{\code{ref}:}{character matrix of the target or URL to be redirected to from each cell of the table.}
 ##'    \item{\code{color}:}{character matrix indicating the color of each cell of the table.}
+##'    \item{\code{bgcolor}:}{character matrix indicating the background color of each cell of the table.}
 ##'    \item{\code{includeRowNames}:}{logical; if TRUE row names of "dat" are used as row names of the table.}
 ##'    \item{\code{includeColNames}:}{logical; if TRUE column names of "dat" are used as column names of the table.}
 ##'    \item{\code{rowref}:}{a character vectors of references to be linked from the row names of the table.}
@@ -66,6 +68,7 @@ setClass ("twTable",
             dat   = "data.frame",
             ref   = "matrix",
             color = "matrix",
+            bgcolor = "matrix",
             ##
             ## rownames  = "character",
             ## colnames  = "character",
@@ -97,6 +100,7 @@ setMethod ("initialize", "twTable",
                      dat, 
                      ref, 
                      color,
+                     bgcolor,
                      ## rownames,
                      ## colnames, 
                      includeRowNames, 
@@ -139,6 +143,17 @@ setMethod ("initialize", "twTable",
                  stop ('"dat" and "color" have different dimensions.')
                } else {
                  .Object@color <- color
+               }
+             }
+
+             if (missing (bgcolor)) {
+               .Object@bgcolor <- matrix (NA_character_ , nrow = nrow (dat), ncol = ncol (dat))
+               dimnames (.Object@bgcolor) <- dimnames (.Object@dat)
+             } else {
+               if (any (dim (dat) != dim (bgcolor))) {
+                 stop ('"dat" and "bgcolor" have different dimensions.')
+               } else {
+                 .Object@bgcolor <- bgcolor
                }
              }
 
@@ -271,6 +286,11 @@ setValidity ("twTable", function (object) { ##the variable can be named other th
     out <- c (out, '"dat" and "color" have different dimension.')
   }
 
+  if (any (dim (object@dat) != dim (object@bgcolor))) {
+    out <- c (out, '"dat" and "bgcolor" have different dimension.')
+  }
+
+  
   if (length (object@align) != ncol (object@dat)) {
     out <- c (out, '"align" length is not equal to the number of columns.')
   }
@@ -327,6 +347,19 @@ color <- function (x) {
 ##' @export
 'color<-' <- function (x, value) {
   x@color <- value
+  return (x)
+}
+
+########################################
+
+##' @export
+bgcolor <- function (x) {
+  x@bgcolor
+}
+
+##' @export
+'bgcolor<-' <- function (x, value) {
+  x@bgcolor <- value
   return (x)
 }
 
@@ -457,14 +490,19 @@ wikify.table <- function (object) {
   ## 2 rownames
   ## 3 align
   ## 4 color
+  ## 5 background color
   ##SYNTAX:
-  ##|color:#334433; North East|
+  ##|color:#000099;TableTextHere|
+  ##|bgcolor:#000099;TableTextHere|
+  ##|bgcolor:#000099;color:#990000;TableTextHere|
+  ##|bgcolor:#000099;color:#990000;[[TableTextHere|urlHere]]|
   ##the link overwrites the color
   
   ##FORMAT DATA
-  dat   <- object@dat
-  ref   <- object@ref
-  color <- object@color
+  dat     <- object@dat
+  ref     <- object@ref
+  color   <- object@color
+  bgcolor <- object@bgcolor
   ##
   rowNames <- rownames (dat)
   colNames <- colnames (dat)
@@ -481,21 +519,24 @@ wikify.table <- function (object) {
   
   ##row and col names
   if (object@includeColNames) {
-    dat   <- rbind (colnames (object@dat), dat)
-    ref   <- rbind (object@colref,         ref)
-    color <- rbind (NA,                  color)
+    dat     <- rbind (colnames (object@dat), dat)
+    ref     <- rbind (object@colref,         ref)
+    color   <- rbind (NA,                  color)
+    bgcolor <- rbind (NA,                bgcolor)
     Nrow <- Nrow + 1
     if (object@includeRowNames) {
-      dat   <- cbind (c ("", rowNames),        dat)
-      ref   <- cbind (c (NA, object@rowref),   ref)
-      color <- cbind (NA,                    color)
+      dat     <- cbind (c ("", rowNames),        dat)
+      ref     <- cbind (c (NA, object@rowref),   ref)
+      color   <- cbind (NA,                    color)
+      bgcolor <- cbind (NA,                  bgcolor)
       Ncol <- Ncol + 1
     }
   } else {
     if (object@includeRowNames) {
-      dat   <- cbind (rowNames,        dat)
-      ref   <- cbind (object@rowref,   ref)
-      color <- cbind (NA,            color)
+      dat     <- cbind (rowNames,        dat)
+      ref     <- cbind (object@rowref,   ref)
+      color   <- cbind (NA,            color)
+      bgcolor <- cbind (NA,          bgcolor)
       Ncol <- Ncol + 1
     }
   }
@@ -536,10 +577,15 @@ wikify.table <- function (object) {
   touse <- which (align %in% c("r", "c"))
   mat[touse] <- paste ("", mat[touse])
   
-  ##COLORS
+  ##COLOR
   color <- as.character (color)
   con.color <- !is.na (color)
   mat[con.color] <- paste ("color:", color[con.color], ";", mat[con.color], sep = "")
+
+  ##BGCOLOR
+  bgcolor <- as.character (bgcolor)
+  con.bgcolor <- !is.na (bgcolor)
+  mat[con.bgcolor] <- paste ("bgcolor:", bgcolor[con.bgcolor], ";", mat[con.bgcolor], sep = "")
 
   
   ##WIKI FORMAT
