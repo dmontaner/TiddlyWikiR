@@ -18,5 +18,5 @@ install_github ("TiddlyWikiR",  username = "dmontaner")
 Example
 -------
 
-You can find an introduction to the basic workflow of the package in this
-[vignette](inst/doc/TiddlyWikiR_getting_started.md)
+You can find an introduction to the basic TiddlyWikiR workflow in the
+[package vignette](inst/doc/TiddlyWikiR_getting_started.md).
