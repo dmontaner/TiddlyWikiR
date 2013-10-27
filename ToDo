@@ -1,8 +1,7 @@
 
 Define a "dim" method for twTable
-Define a methods for sub-setting twTable
 
-Create show method for tiddlers.
+Create show method for tiddlers and twTables
 
 Functions to read and handle TiddlyWiki version.
 May give a warning if a new version is available.

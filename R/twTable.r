@@ -9,6 +9,7 @@
 ##'
 ##' @aliases twTable
 ##' @aliases initialize,twTable-method
+##' @aliases [,twTable-method
 ##' @aliases dat dat<-
 ##' @aliases ref,twTable-method  ref<-,twTable-method
 ##' @aliases color color<-
@@ -310,6 +311,42 @@ setValidity ("twTable", function (object) { ##the variable can be named other th
   return (out)
 })
 
+################################################################################
+
+##  Sub-setting operator
+##' @export
+setMethod ("[", "twTable", 
+           function (x, i, j, ..., drop=TRUE) {
+             
+             if (!missing (i)) {
+               if (is.character (i)) { ##use names
+                 i <- match (i, rownames (x@dat))
+                 i <- i[!is.na (i)]
+                 print ("i texto")
+               }
+             }
+             
+             if (!missing (j)) {
+               if (is.character (j)) { ##use names
+                 j <- match (j, colnames (x@dat))
+                 j <- j[!is.na (j)]
+                 print ("j texto")
+               }
+             }
+
+             ##logical index can be used already
+             
+             x@dat <- x@dat[i, j, drop = FALSE]
+             x@ref <- x@ref[i, j, drop = FALSE]
+             x@color <- x@color[i, j, drop = FALSE]
+             x@bgcolor <- x@bgcolor[i, j, drop = FALSE]
+
+             x@rowref <- x@rowref[i]
+             x@colref <- x@colref[j]
+             x@align  <- x@align[j]
+
+             return (x)
+           })
 
 ################################################################################
 ### ACCESSOR and REPLACEMENTS

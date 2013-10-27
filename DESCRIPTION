@@ -26,3 +26,4 @@ Collate:
     'twList.r'
     'writeTags.r'
     'newEmptyWiki.r'
+    'TiddlyWikiR-package.r'

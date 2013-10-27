@@ -1,5 +1,6 @@
 \docType{class}
 \name{twTable-class}
+\alias{[,twTable-method}
 \alias{align,twTable-method}
 \alias{align<-,twTable-method}
 \alias{bgcolor}
