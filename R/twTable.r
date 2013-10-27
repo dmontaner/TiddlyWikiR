@@ -23,7 +23,7 @@
 ##' @aliases footer footer<-
 ##' @aliases sortable sortable<-
 ##' @aliases digits digits<-
-##' 
+##' @aliases dim,twTable-method
 ##' 
 ##' @keywords wiki table
 ##' @seealso \code{\link{twLink}} and \code{\link{twImage}}
@@ -656,3 +656,9 @@ wikify.table <- function (object) {
 
 ###Wikify method
 setMethod ("wikify", "twTable", wikify.table)
+
+
+################################################################################
+
+##' @export
+setMethod ("dim", "twTable", function (x) dim (x@dat))

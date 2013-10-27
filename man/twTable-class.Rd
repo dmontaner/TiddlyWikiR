@@ -13,6 +13,7 @@
 \alias{dat<-}
 \alias{digits}
 \alias{digits<-}
+\alias{dim,twTable-method}
 \alias{footer}
 \alias{footer<-}
 \alias{includeColNames}
