@@ -16,14 +16,3 @@ Imports:
     methods
 Suggests:
     knitr
-Collate:
-    'AllGenerics.R'
-    'tiddler.r'
-    'twImage.r'
-    'twLink.r'
-    'writeTiddlers.r'
-    'twTable.r'
-    'twList.r'
-    'writeTags.r'
-    'newEmptyWiki.r'
-    'TiddlyWikiR-package.r'
