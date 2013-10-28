@@ -33,7 +33,8 @@
 ##'  }
 ##'
 ##' @examples
-##' list1 <- new ("twList", elements = c("line one", "line two", "line three"), level = c(1,2,2), type = c("u", "o", "o"))
+##' list1 <- new ("twList", elements = c("line one", "line two", "line three"),
+##'               level = c(1,2,2), type = c("u", "o", "o"))
 ##' list2 <- twList (LETTERS[1:5])
 ##'
 ##' wikify (list1)

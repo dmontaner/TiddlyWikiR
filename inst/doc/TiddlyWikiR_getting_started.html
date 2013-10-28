@@ -366,10 +366,10 @@ rownames(myData) &lt;- c(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;)
 myData
 </code></pre>
 
-<pre><code>##            V1        V2      V3      V4
-## one   -0.2937 -1.102144 -0.4979 -1.5739
-## two   -0.1233  0.007553 -0.6576  0.1831
-## three  0.4659  0.711580  0.4845  0.4804
+<pre><code>##            V1      V2      V3      V4
+## one   -2.3587 -0.1026  0.2677  0.7732
+## two   -0.9173 -0.2530 -0.1501  0.8207
+## three -0.6162 -0.3973 -0.4661 -1.8239
 </code></pre>
 
 <p>and convert it into a table to be included in the report:</p>
@@ -436,6 +436,32 @@ and that is not intended to be modified by TiddlyWikiR.</p>
 </code></pre>
 
 <p>Thus, the final report is ready to go in the file <a href="myReport_2.html">myReport_2.html</a>.</p>
+
+<h2>Session Info</h2>
+
+<pre><code class="r">sessionInfo()
+</code></pre>
+
+<pre><code>## R version 3.0.2 (2013-09-25)
+## Platform: x86_64-unknown-linux-gnu (64-bit)
+## 
+## locale:
+##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
+##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
+## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] TiddlyWikiR_1.0.0 knitr_1.5        
+## 
+## loaded via a namespace (and not attached):
+## [1] evaluate_0.5.1 formatR_0.9    stringr_0.6.2  tools_3.0.2
+</code></pre>
 
 <h1>More about TiddlyWikiR</h1>
 

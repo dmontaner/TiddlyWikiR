@@ -257,6 +257,15 @@ writeTags (list ('@@currently does not exist@@' = "has been created"), file = "m
 Thus, the final report is ready to go in the file [myReport_2.html](myReport_2.html).
 
 
+Session Info
+--------------------------------------------------------------------------------
+
+```{r}
+sessionInfo ()
+```
+
+
+
 More about TiddlyWikiR
 ================================================================================
 

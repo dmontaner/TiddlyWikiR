@@ -36,7 +36,8 @@ new ("twLink", label = "the text here", ref = "aTiddlerNameHere")
 twLink (label = "the text here", ref = "http://www.r-project.org/")
 
 twLink ("here", ref = "http://www.dmontaner.com")
-paste ("see my home page", twLink ("here", ref = "http://www.dmontaner.com"), ", I hope you like it.")
+paste ("see my home page",
+       twLink ("here", ref = "http://www.dmontaner.com"), ", I hope you like it.")
 }
 \author{
   David Montaner \email{dmontaner@cipf.es}
