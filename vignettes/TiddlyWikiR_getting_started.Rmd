@@ -1,5 +1,5 @@
 <!--
-%\VignetteEngine{knitr::knithtml}
+%\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{Getting started with TiddlyWikiR}
 -->
 

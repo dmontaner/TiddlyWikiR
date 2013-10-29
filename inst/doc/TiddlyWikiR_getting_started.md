@@ -1,5 +1,5 @@
 <!--
-%\VignetteEngine{knitr::knithtml}
+%\VignetteEngine{knitr::knitr}
 %\VignetteIndexEntry{Getting started with TiddlyWikiR}
 -->
 
@@ -229,10 +229,10 @@ myData
 ```
 
 ```
-##            V1      V2      V3      V4
-## one    1.1585  1.6188 0.01018 -0.7081
-## two   -0.3116 -0.4347 0.68724  1.0374
-## three -0.4112  0.8712 0.56024  0.1257
+##            V1     V2      V3      V4
+## one    0.5105 -2.298  0.7687 -0.9605
+## two   -0.9448 -2.507 -0.8013  0.5740
+## three  0.3782 -1.831 -2.7822 -0.2166
 ```
 
 
@@ -385,5 +385,5 @@ Links
 
 --------------------------------------------------------------------------------
 <center>
-Last revision: 26-10-2013 | Compiled: 28-10-2013
+Last revision: 26-10-2013 | Compiled: 29-10-2013
 </center>
