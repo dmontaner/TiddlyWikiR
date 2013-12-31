@@ -5,7 +5,7 @@
 
 <center>
 
-Getting started with TiddlyWikiR
+Getting started with **TiddlyWikiR**
 ================================================================================
 
 **[David Montaner](http://www.dmontaner.com/)** 
@@ -82,8 +82,13 @@ newEmptyWiki ("myTemplate.html")
 dir ()
 ```
 
-The file [myTemplate.html](myTemplate.html) has been crated. 
+The _local_ file [myTemplate.html][loc_template] has been crated. 
 You can view this html file in your browser and use the TiddlyWiki editor to write into it. 
+(An _external_ copy of the file may be found [here][ext_template]).
+
+[loc_template]: myTemplate.html "use this link if you are reading the vignette from the library source"
+[ext_template]: http://www.dmontaner.com/tiddlywikir/myTemplate.html "use this link if you are reading the vignette from CRAN"
+
 
 The __TiddlySaver.jar__ file is needed by some browsers to be able to save changes in the wiki. 
 See the [TiddlyWiki][tw_home] web page for details.
@@ -138,8 +143,11 @@ tagList <- list ('@@my_tag_for_plot@@' = myImage, '@@my_tag_for_number@@' = 1000
 writeTags (tagList, infile = "myTemplate.html", outfile = "myReport_1.html")
 ```
 
-You can see the result of the insertion in the newly created file [myReport_1.html](myReport_1.html)
+You can see the result of the insertion in the newly _locally_ created file [myReport_1.html][loc_rep_1]
+(or a copy of it in this _external_ [link][ext_rep_1]).
 
+[loc_rep_1]: myReport_1.html "use this link if you are reading the vignette from the library source"
+[ext_rep_1]: http://www.dmontaner.com/tiddlywikir/myReport_1.html "use this link if you are reading the vignette from CRAN"
 
 
 Insert a new tiddler
@@ -254,7 +262,16 @@ Finally we may replace our last tag (now overwriting the file):
 writeTags (list ('@@currently does not exist@@' = "has been created"), file = "myReport_2.html")
 ```
 
-Thus, the final report is ready to go in the file [myReport_2.html](myReport_2.html).
+Thus, the final report is ready to go in the _local_ file [myReport_2.html][loc_rep_2]
+(use [this link][ext_rep_2] to find an _external_ copy of the file).
+
+[loc_rep_2]: myReport_2.html "use this link if you are reading the vignette from the library source"
+[ext_rep_2]: http://www.dmontaner.com/tiddlywikir/myReport_2.html "use this link if you are reading the vignette from CRAN"
+
+
+
+
+
 
 
 Session Info
@@ -280,10 +297,9 @@ Links
 ================================================================================
 -->
 
-[tw_home]: http://tiddlywiki.com/
-
+[tw_home]: http://classic.tiddlywiki.com/ "TiddlyWiki Classic Version"
 
 --------------------------------------------------------------------------------
 <center>
-Last revision: 26-10-2013 | Compiled: `r format (Sys.time(), "%d-%m-%Y")`
+Last revision: 30-12-2013 | Compiled: `r format (Sys.time(), "%d-%m-%Y")`
 </center>

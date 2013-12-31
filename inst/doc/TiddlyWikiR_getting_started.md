@@ -5,7 +5,7 @@
 
 <center>
 
-Getting started with TiddlyWikiR
+Getting started with **TiddlyWikiR**
 ================================================================================
 
 **[David Montaner](http://www.dmontaner.com/)** 
@@ -99,8 +99,13 @@ dir()
 ```
 
 
-The file [myTemplate.html](myTemplate.html) has been crated. 
+The _local_ file [myTemplate.html][loc_template] has been crated. 
 You can view this html file in your browser and use the TiddlyWiki editor to write into it. 
+(An _external_ copy of the file may be found [here][ext_template]).
+
+[loc_template]: myTemplate.html "use this link if you are reading the vignette from the library source"
+[ext_template]: http://www.dmontaner.com/tiddlywikir/myTemplate.html "use this link if you are reading the vignette from CRAN"
+
 
 The __TiddlySaver.jar__ file is needed by some browsers to be able to save changes in the wiki. 
 See the [TiddlyWiki][tw_home] web page for details.
@@ -166,8 +171,11 @@ writeTags(tagList, infile = "myTemplate.html", outfile = "myReport_1.html")
 ```
 
 
-You can see the result of the insertion in the newly created file [myReport_1.html](myReport_1.html)
+You can see the result of the insertion in the newly _locally_ created file [myReport_1.html][loc_rep_1]
+(or a copy of it in this _external_ [link][ext_rep_1]).
 
+[loc_rep_1]: myReport_1.html "use this link if you are reading the vignette from the library source"
+[ext_rep_1]: http://www.dmontaner.com/tiddlywikir/myReport_1.html "use this link if you are reading the vignette from CRAN"
 
 
 Insert a new tiddler
@@ -229,10 +237,10 @@ myData
 ```
 
 ```
-##            V1     V2      V3      V4
-## one    0.5105 -2.298  0.7687 -0.9605
-## two   -0.9448 -2.507 -0.8013  0.5740
-## three  0.3782 -1.831 -2.7822 -0.2166
+##            V1       V2      V3      V4
+## one   -0.8606  0.39911 -0.0912 -0.6593
+## two    1.5660 -0.08761  0.7417  0.9250
+## three  1.6161 -0.66729 -0.2992 -0.8530
 ```
 
 
@@ -329,7 +337,16 @@ writeTags(list(`@@currently does not exist@@` = "has been created"), file = "myR
 ```
 
 
-Thus, the final report is ready to go in the file [myReport_2.html](myReport_2.html).
+Thus, the final report is ready to go in the _local_ file [myReport_2.html][loc_rep_2]
+(use [this link][ext_rep_2] to find an _external_ copy of the file).
+
+[loc_rep_2]: myReport_2.html "use this link if you are reading the vignette from the library source"
+[ext_rep_2]: http://www.dmontaner.com/tiddlywikir/myReport_2.html "use this link if you are reading the vignette from CRAN"
+
+
+
+
+
 
 
 Session Info
@@ -346,11 +363,11 @@ sessionInfo()
 ## 
 ## locale:
 ##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
+##  [3] LC_TIME=es_ES.UTF-8        LC_COLLATE=en_US.UTF-8    
+##  [5] LC_MONETARY=es_ES.UTF-8    LC_MESSAGES=en_US.UTF-8   
+##  [7] LC_PAPER=es_ES.UTF-8       LC_NAME=C                 
 ##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
+## [11] LC_MEASUREMENT=es_ES.UTF-8 LC_IDENTIFICATION=C       
 ## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -359,7 +376,7 @@ sessionInfo()
 ## [1] TiddlyWikiR_1.0.0 knitr_1.5        
 ## 
 ## loaded via a namespace (and not attached):
-## [1] evaluate_0.5.1 formatR_0.9    markdown_0.6.3 stringr_0.6.2 
+## [1] evaluate_0.5.1 formatR_0.10   markdown_0.6.3 stringr_0.6.2 
 ## [5] tools_3.0.2
 ```
 
@@ -380,10 +397,9 @@ Links
 ================================================================================
 -->
 
-[tw_home]: http://tiddlywiki.com/
-
+[tw_home]: http://classic.tiddlywiki.com/ "TiddlyWiki Classic Version"
 
 --------------------------------------------------------------------------------
 <center>
-Last revision: 26-10-2013 | Compiled: 29-10-2013
+Last revision: 30-12-2013 | Compiled: 31-12-2013
 </center>
