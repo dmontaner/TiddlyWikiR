@@ -132,7 +132,7 @@ setMethod ("initialize", "twTable",
                if (any (dim (dat) != dim (ref))) {
                  stop ('"dat" and "ref" have different dimensions.')
                } else {
-                 .Object@ref <- ref
+                 .Object@ref <- as.matrix (ref)  #convert data.frames
                }
              }
 
@@ -143,7 +143,7 @@ setMethod ("initialize", "twTable",
                if (any (dim (dat) != dim (color))) {
                  stop ('"dat" and "color" have different dimensions.')
                } else {
-                 .Object@color <- color
+                 .Object@color <- as.matrix (color) #convert data.frames
                }
              }
 
@@ -154,7 +154,7 @@ setMethod ("initialize", "twTable",
                if (any (dim (dat) != dim (bgcolor))) {
                  stop ('"dat" and "bgcolor" have different dimensions.')
                } else {
-                 .Object@bgcolor <- bgcolor
+                 .Object@bgcolor <- as.matrix (bgcolor) #convert data.frames
                }
              }
 
