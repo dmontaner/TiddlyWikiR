@@ -87,7 +87,7 @@ You can view this html file in your browser and use the TiddlyWiki editor to wri
 (An _external_ copy of the file may be found [here][ext_template]).
 
 [loc_template]: myTemplate.html "use this link if you are reading the vignette from the library source"
-[ext_template]: http://www.dmontaner.com/tiddlywikir/myTemplate.html "use this link if you are reading the vignette from CRAN"
+[ext_template]: http://www.dmontaner.com/tiddlywikir/myTemplate.html "use this link if you are reading the vignette from CRAN or Github"
 
 
 The __TiddlySaver.jar__ file is needed by some browsers to be able to save changes in the wiki. 
@@ -146,8 +146,8 @@ writeTags (tagList, infile = "myTemplate.html", outfile = "myReport_1.html")
 You can see the result of the insertion in the newly _locally_ created file [myReport_1.html][loc_rep_1]
 (or a copy of it in this _external_ [link][ext_rep_1]).
 
-[loc_rep_1]: myReport_1.html "use this link if you are reading the vignette from the library source"
-[ext_rep_1]: http://www.dmontaner.com/tiddlywikir/myReport_1.html "use this link if you are reading the vignette from CRAN"
+[loc_rep_1]: myReport_1.html "use this link if you are reading the vignette from the local installation of the library"
+[ext_rep_1]: http://www.dmontaner.com/tiddlywikir/myReport_1.html "use this link if you are reading the vignette from CRAN or Github"
 
 
 Insert a new tiddler
@@ -265,8 +265,8 @@ writeTags (list ('@@currently does not exist@@' = "has been created"), file = "m
 Thus, the final report is ready to go in the _local_ file [myReport_2.html][loc_rep_2]
 (use [this link][ext_rep_2] to find an _external_ copy of the file).
 
-[loc_rep_2]: myReport_2.html "use this link if you are reading the vignette from the library source"
-[ext_rep_2]: http://www.dmontaner.com/tiddlywikir/myReport_2.html "use this link if you are reading the vignette from CRAN"
+[loc_rep_2]: myReport_2.html "use this link if you are reading the vignette from the local installation of the library"
+[ext_rep_2]: http://www.dmontaner.com/tiddlywikir/myReport_2.html "use this link if you are reading the vignette from CRAN or Github"
 
 
 
