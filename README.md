@@ -11,6 +11,12 @@ Install
 Stable version of the package and binary files can be found in the CRAN repository:  
 <http://cran.es.r-project.org/web/packages/TiddlyWikiR/index.html>
 
+You can install this stable version doing: 
+
+```
+install.packages ("TiddlyWikiR")
+```
+
 
 Development version may be found in GitHub:  
 <https://github.com/dmontaner/TiddlyWikiR>
