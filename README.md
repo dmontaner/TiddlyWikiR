@@ -25,8 +25,9 @@ You can install this development version form your R session doing:
 
 ```
 library (devtools)
-install_github ("TiddlyWikiR",  username = "dmontaner")
+install_github ("dmontaner/TiddlyWikiR")
 ```
+
 
 Documentation
 -------------

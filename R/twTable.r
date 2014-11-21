@@ -552,7 +552,9 @@ wikify.table <- function (object) {
     dat[es.numeric] <- round (dat[es.numeric], digits = object@digits)
   }
   
-  dat <- matrix (as.character (unlist (dat)), nrow = Nrow, ncol = Ncol) ##this tries to avoid the spaces when converting to text. FIND A NICER WAY TO DO IT.
+  ##dat <- matrix (as.character (unlist (dat)), nrow = Nrow, ncol = Ncol) ##this tries to avoid the spaces when converting to text. FIND A NICER WAY TO DO IT.
+  dat <- as.matrix (dat)  ##factors are properly transformed to characters
+  dat <- gsub ("^\\s+|\\s+$", "", dat)  ##this trims whites at the beginning and at the end
   
   ##row and col names
   if (object@includeColNames) {
