@@ -551,10 +551,14 @@ wikify.table <- function (object) {
   if (any (es.numeric)) {
     dat[es.numeric] <- round (dat[es.numeric], digits = object@digits)
   }
-  
-  ##dat <- matrix (as.character (unlist (dat)), nrow = Nrow, ncol = Ncol) ##this tries to avoid the spaces when converting to text. FIND A NICER WAY TO DO IT.
+
+  ##DATA FRAME TO CHARACTER MATRIX
+  ##dat <- matrix (as.character (unlist (dat)), nrow = Nrow, ncol = Ncol) ##does not work for factors
+  for (co in colnames (dat)) {
+      dat[,co] <- as.character (dat[,co])  ##ok for factors and numbers; ok for nrow = 1
+  }
   dat <- as.matrix (dat)  ##factors are properly transformed to characters
-  dat <- gsub ("^\\s+|\\s+$", "", dat)  ##this trims whites at the beginning and at the end
+  ##gsub ("^\\s+|\\s+$", "", dat)  ##this trims whites at the beginning and at the end; SHOULD NOT BE NEEDED
   
   ##row and col names
   if (object@includeColNames) {
