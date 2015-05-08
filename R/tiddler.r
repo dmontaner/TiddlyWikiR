@@ -79,6 +79,7 @@ setClass ("tiddler",
 
 ##' @export
 newTiddler <- function (...) {
+  ## some checking needed here
   new ("tiddler", ...)
 }
 
@@ -148,6 +149,9 @@ setValidity ("tiddler", function (object) {
   out <- ""
   if (length (object@title) == 0) {
     out <- paste (out, "Any tiddler must have a title.", sep = separador)
+  }
+  if (length (object@title) > 1) {
+    out <- paste (out, "Title must be of length 1.", sep = separador)
   }
   if (length (object@creator) == 0) {
     out <- paste (out, "Any tiddler must have a creator.", sep = separador)
